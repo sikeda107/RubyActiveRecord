@@ -1,0 +1,14 @@
+# https://qiita.com/gatapon/items/4cb543e84e7fcc9238b6
+mysql:
+  build: .
+  dockerfile: Dockerfile
+  environment:
+    MYSQL_ROOT_PASSWORD: root #rootユーザ用のパスワード
+    MYSQL_USER: user #作業ユーザ名
+    MYSQL_PASSWORD: password #作業ユーザ用のパスワード
+    MYSQL_DATABASE: test #作成するDB名
+    TZ: "Asia/Tokyo"
+  ports:
+    - 3306:3306
+  volumes:
+    - ./data:/var/lib/mysql
